@@ -32,7 +32,7 @@ This project is an implementation of the **Advent of Code 2024** puzzles in C++.
    ```
    ./build/AoC2024 [input_directory/prefix]
    ```
-   You **must** provide the directory and file prefix as an argument to the program. For example:
+   You **must** provide the directory and file prefix as an argument to the program. All the input file must be located in the same directory. For example:
    ```
    ./build/AoC2024 InputFiles/input_day
    ```
