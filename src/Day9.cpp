@@ -35,10 +35,12 @@ void Day9(ifstream& input_file){
   vector<FileBlock> block_list_p2 = block_list;
 
   // PART 1
-  for(int i = 0; i < (int) block_list.size() - 1; i++){
+  for(int i = 0; i < (int) block_list.size(); i++){
     FileBlock block = block_list[i];
     sum_position_id += block.ID * (block.size / 2.0) * (2 * block.pos + block.size - 1);
-  
+      
+    if(i == (int) block_list.size() - 1) break;
+    
     int p1 = block.pos + block.size;
     int p2 = block_list[i+1].pos;
     
