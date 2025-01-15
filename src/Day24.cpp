@@ -61,9 +61,7 @@ void Day24(ifstream& input_file){
   
   map<string, int> gates_value;
   map<string, array<string, 3>> gates_operations;
-  
-  long long x_result = 0;
-  long long y_result = 0;
+
   long long z_result = 0;
 
   string line;
@@ -75,13 +73,6 @@ void Day24(ifstream& input_file){
     string gate_name = m[1].str();
     int gate_value = stoi(m[2].str());
     gates_value[gate_name] = gate_value;
-    
-    if(gate_name[0] == 'x' && gate_value == 1){
-      x_result += pow(2, stoi(gate_name.substr(1, 2)));
-    }
-    if(gate_name[0] == 'y' && gate_value == 1){
-      y_result += pow(2, stoi(gate_name.substr(1, 2)));
-    }
         
     getline(input_file, line);
   }

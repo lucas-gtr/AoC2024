@@ -6,7 +6,7 @@ bool IsGoodReport(const vector<int>& report){
   bool increasing = true;
   bool decreasing = true;
   
-  for(int i = 0; i < report.size() - 1; i++){
+  for(int i = 0; i < (int) report.size() - 1; i++){
     int diff = report[i+1] - report[i];
     
     if(diff < 0) increasing = false;
@@ -33,7 +33,7 @@ void Day2(std::ifstream& input_file){
     if(IsGoodReport(report)) good_reports++;
     // PART 2
     else{
-      for(size_t i = 0; i < report.size(); i++){
+      for(int i = 0; i < (int) report.size(); i++){
         vector<int> report_corrected = report;
         report_corrected.erase(report_corrected.begin() + i);
         if(IsGoodReport(report_corrected)){

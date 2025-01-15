@@ -23,7 +23,7 @@ void Day6(ifstream& input_file){
     grid.push_back(line);
     
     x = (int) line.find('^');
-    if(x != string::npos){
+    if(x != (int) string::npos){
       start_pos = {y, x};
       grid[y][x] = '.';
     }
@@ -71,7 +71,7 @@ void Day6(ifstream& input_file){
   
   next_pos_y = pos_y + dirs[dir].first;
   next_pos_x = pos_x + dirs[dir].second;
-  for (int i = 1; i < path.size(); i++) {
+  for (int i = 1; i < (int) path.size(); i++) {
     grid[path[i - 1].first][path[i - 1].second] = '.';
     
     if(obstacle_positions.count(path[i])) continue;

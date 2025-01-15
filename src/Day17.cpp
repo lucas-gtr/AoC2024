@@ -18,7 +18,7 @@ string GetOutput(vector<pair<int, int>>& instruction_list, long A){
   };
   
   int current_instruction = 0;
-  while(current_instruction < instruction_list.size()){
+  while(current_instruction < (int) instruction_list.size()){
     opcode = instruction_list[current_instruction].first;
     operand = instruction_list[current_instruction].second;
     
@@ -77,7 +77,7 @@ void Day17(ifstream& input_file){
   string program = m[2].str();
   
   vector<pair<int, int>> instruction_list;
-  for(int i = 0; i <= program.size(); i+=4)
+  for(int i = 0; i <= (int) program.size(); i+=4)
     instruction_list.push_back(make_pair(int(program[i] - '0'), int(program[i+2] - '0')));
   
   string initial_output = GetOutput(instruction_list, A);

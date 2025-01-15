@@ -29,7 +29,7 @@ void Day(int i, const std::string& input_file_path) {
     Day25
   };
   
-  if (i >= 1 && i <= days.size()) {
+  if (i >= 1 && i <= (int) days.size()) {
     Timer::StartTimer();
     std::cout << "------- DAY " << i << " -------" << '\n';
     std::ifstream input_file(input_file_path + std::to_string(i));

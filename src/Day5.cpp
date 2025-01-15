@@ -5,7 +5,7 @@ using namespace std;
 void GetGoodOrder(vector<int>& printing_order, const set<int> (&page_orders)[100]){
   set<int> page_printed;
   
-  for(int idx1 = 0; idx1 < printing_order.size(); idx1++){
+  for(int idx1 = 0; idx1 < (int) printing_order.size(); idx1++){
     int page = printing_order[idx1];
     for(auto page_after : page_orders[page]){
       if(page_printed.count(page_after)){

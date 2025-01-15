@@ -80,7 +80,7 @@ void Day16(ifstream& input_file){
   while(!input_file.eof()){
     grid.push_back(line);
     if(!(start_x && start_y && end_x && end_y)){
-      for(int i = 0; i < line.size(); i++){
+      for(int i = 0; i < (int) line.size(); i++){
         if(line[i]  == 'S'){
           start_x = i;
           start_y = y;

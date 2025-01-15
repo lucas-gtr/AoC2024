@@ -36,8 +36,8 @@ void Day8(ifstream& input_file){
   int h = 0;
     
   for(const auto& [_, positions] : antenna_list){
-    for(int i = 0; i < positions.size(); i++){
-      for(int j = 0; j < positions.size(); j++){
+    for(int i = 0; i < (int) positions.size(); i++){
+      for(int j = 0; j < (int) positions.size(); j++){
         if(i == j) continue;
         
         y1 = positions[i].first;

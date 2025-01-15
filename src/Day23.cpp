@@ -62,7 +62,7 @@ void Day23(ifstream& input_file){
   set<string> greatest_connection;
   int max_size = 0;
   for(const unordered_set<string>& connection : interconnection_lists){
-    if(connection.size() > max_size){
+    if((int) connection.size() > max_size){
       max_size = (int) connection.size();
       greatest_connection = set<string>(connection.begin(), connection.end());
     }

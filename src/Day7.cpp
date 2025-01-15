@@ -6,7 +6,7 @@ bool Recur(long current_result, int current_idx, long result_final, const vector
   long r1 = current_result + v[current_idx];
   long r2 = current_result * v[current_idx];
   
-  if(current_idx == v.size() - 1){
+  if(current_idx == (int) v.size() - 1){
     if(r1 == result_final || r2 == result_final){
       return true;
     }
@@ -27,7 +27,7 @@ bool RecurConcat(long current_result, int current_idx, long result_final, const 
   long r3 = current_result * pow(10, power_of_ten) + v[current_idx];
   
   
-  if(current_idx == v.size() - 1){
+  if(current_idx == (int) v.size() - 1){
     if(r1 == result_final || r2 == result_final || r3 == result_final){
       return true;
     }

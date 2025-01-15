@@ -18,7 +18,7 @@ void Day9(ifstream& input_file){
   long sum_position_id_p2 = 0;
   
   int pos = 0;
-  for(int i = 0; i < line.size(); i++){
+  for(int i = 0; i < (int) line.size(); i++){
     int block_size = (line[i] - '0');
     if(i % 2 == 0){
       FileBlock block;
@@ -35,7 +35,7 @@ void Day9(ifstream& input_file){
   vector<FileBlock> block_list_p2 = block_list;
 
   // PART 1
-  for(int i = 0; i < block_list.size() - 1; i++){
+  for(int i = 0; i < (int) block_list.size() - 1; i++){
     FileBlock block = block_list[i];
     sum_position_id += block.ID * (block.size / 2.0) * (2 * block.pos + block.size - 1);
   
@@ -58,7 +58,7 @@ void Day9(ifstream& input_file){
   // PART 2
   vector<set<int>> gap_position(10);
 
-  for(int j = 0; j < block_list_p2.size() - 1; j++){
+  for(int j = 0; j < (int) block_list_p2.size() - 1; j++){
     int pos1 = block_list_p2[j].pos + block_list_p2[j].size;
     int pos2 = block_list_p2[j+1].pos;
     int gap = pos2 - pos1;
@@ -75,7 +75,7 @@ void Day9(ifstream& input_file){
     int first_pos = INT_MAX;
     int gap_taken = -1;
 
-    for (int i = gap_needed; i < gap_position.size(); i++) {
+    for (int i = gap_needed; i < (int) gap_position.size(); i++) {
       if (!gap_position[i].empty()) {
         int pos = *(gap_position[i].begin());
         if (pos < first_pos) {

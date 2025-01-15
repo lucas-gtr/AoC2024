@@ -40,7 +40,7 @@ void FindPatternsInSequence(vector<Node>& node_list, string current_sequence, lo
   for(Node& node : node_list){
     if(node.sequence == sequence_to_find.substr(0, node.sequence.size())){
       sequences_possibles[current_sequence + node.sequence] += possible_ways;
-      if(sequence_to_find.size() == node.length) return;
+      if(node.length == (int) sequence_to_find.size()) return;
       
       FindPatternsInSequence(node.child_sequences, current_sequence, possible_ways, sequence_to_find, sequences_possibles);
       return;
@@ -79,7 +79,7 @@ void Day19(ifstream& input_file){
   
   string line;
   getline(input_file, line);
-  for(int i = 0; i <= line.size(); i++){
+  for(int i = 0; i <= (int) line.size(); i++){
     c = line[i];
     if(c == ',' || c == '\0'){
       pattern_list.push_back(char_sequence);

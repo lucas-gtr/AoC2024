@@ -39,7 +39,7 @@ void Day20(ifstream& input_file){
   getline(input_file, line);
   while(!input_file.eof()){
     if(start_position == make_pair(0, 0) || end_position == make_pair(0, 0)){
-      for(int x = 0; x < line.size(); x++){
+      for(int x = 0; x < (int) line.size(); x++){
         if(line[x] == 'S'){
           start_position = make_pair(y, x);
           line[x] = '.';
@@ -65,12 +65,15 @@ void Day20(ifstream& input_file){
   const pair<int, int> dirs[4] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
   time_grid[start_position.first][start_position.second] = 0;
   
+  int rows = (int) grid.size();
+  int cols = (int) grid[0].size();
+
   while(!to_visit.empty()){
     auto [y, x] = to_visit.front();
     to_visit.pop();
     
     for(auto [dir_y, dir_x] : dirs){
-      if(y+dir_y >= 0 && y+dir_y < grid.size() && x+dir_x >= 0 && x+dir_x < grid[0].size() && grid[y+dir_y][x+dir_x] != '#'){
+      if(y+dir_y >= 0 && y+dir_y < rows && x+dir_x >= 0 && x+dir_x < cols && grid[y+dir_y][x+dir_x] != '#'){
         if(time_grid[y + dir_y][x + dir_x] > time_grid[y][x] + 1){
           time_grid[y + dir_y][x + dir_x] = time_grid[y][x] + 1;
           to_visit.push(make_pair(y + dir_y, x + dir_x));
@@ -81,8 +84,8 @@ void Day20(ifstream& input_file){
   int cheat_paths_2_pico = 0;
   int cheat_paths_20_pico = 0;
 
-  for(y = 0; y < time_grid.size(); y++){
-    for(int x = 0; x < time_grid[0].size(); x++){
+  for(y = 0; y < (int) time_grid.size(); y++){
+    for(int x = 0; x < (int) time_grid[0].size(); x++){
       if(grid[y][x] == '.'){
         cheat_paths_2_pico += GetCheatPathsCount(y, x, time_grid, 2);
         cheat_paths_20_pico += GetCheatPathsCount(y, x, time_grid, 20);
