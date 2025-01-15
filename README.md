@@ -1,4 +1,4 @@
-# Advent Of Code
+# Advent Of Code 2024
 
 This project is an implementation of the **Advent of Code 2024** puzzles in C++.
 
