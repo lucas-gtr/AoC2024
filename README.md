@@ -25,10 +25,10 @@ This project is an implementation of the **Advent of Code 2024** puzzles in C++.
    cmake --build build
 
 4. Run the program:
-   ./build/AdventOfCode [input_directory/prefix]
+   ./build/AoC2024 [input_directory/prefix]
 
    You **must** provide the directory and file prefix as an argument to the program. For example:
-   ./build/AdventOfCode InputFiles/input_day
+   ./build/AoC2024 InputFiles/input_day
 
    This will allow the program to locate files named `InputFiles/input_day1`, `InputFiles/input_day2`, ..., up to `InputFiles/input_day25`.
 
